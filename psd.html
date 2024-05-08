@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>bootstrap project</title>
+    <style>
+      .orange-text {
+          color: orange;
+      }
+      .mainsection {
+          padding: 250px; 
+          color: black; 
+          background-image: url('project work/back.jpg'); 
+          background-size: cover;
+          background-position: center;
+      }
+      .main-content {
+          text-align:left;
+      }
+      .imagesection {
+          background-image: url('project work/IMG-20231224-WA0012.jpg'); 
+          background-size: cover;
+          background-attachment: fixed; 
+          height:400px; 
+          display: flex;
+      }
+      .footer-instagram img {
+        width:70px; 
+        height:70px; 
+        margin-right:10px; 
+        margin-bottom:10px;
+      }
+       .footer-top,.footer-bottom {
+          background-color: black;
+          color: white; 
+          height:300px;
+      }
+      .single-footer-top.f1 img {
+          background-color: black; 
+          padding: 10px; 
+      }
+      .single-footer-top h4 {
+         color: orange; 
+      }
+      .product-item {
+        position: relative;
+        overflow: hidden;
+      }
+      .product .row .col-lg-4 {
+        margin: 0;
+      }
+      .product-details {
+        position: absolute;
+        top: 70%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+      }
+      .product-item:hover .product-details {
+        opacity: 1;
+      }
+      .product .col-lg-4:hover img {
+         filter: brightness(80%) sepia(100%) hue-rotate(320deg); 
+      } 
+      .product-details.left {
+         left: 40%;
+      }
+      .product-details.center {
+         left: 49%;
+      }
+      .product-details.right {
+          right: -2%;
+      } 
+      .product-details h4{
+        color: black;
+      }
+      .product-details p {
+        color: black;
+        margin: 70px 0;
+      }
+      .hover-button {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: orange;
+        color: black;
+        border: none;
+        padding: 8px 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      }
+      .card:hover .hover-button,
+      .card.clicked .hover-button {
+        display: block;
+      }
+
+      .team{
+      width:100%;
+      height: 90vh;
+      }
+      .team h1{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 55px;
+      margin-bottom: 30px;
+      }
+      .team h1 span{
+       color: #fac031;
+      margin-left: 15px;
+      font-family: mv boli;
+      }
+      .team h1 span::after{
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: #fac031;
+      display: block;
+      position: relative;
+      bottom: 15px;
+      }
+      .team .team_box{
+      width: 95%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+     top: 13%;
+      }
+     .team .team_box .profile{
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      margin: 0 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 0 8px rgba(0,0,0,0.5);
+      transition: o.4s;
+      }
+      .team .team_box .profile:hover{
+       border-radius: 20px;
+       height: 320px;
+      }
+      .team .team_box .profile img{
+       width: 250px;
+       height: 250px;
+       object-fit: cover;
+       object-position: center;
+       border-radius: 50%;
+       cursor: pointer;
+       box-shadow:  0 0 8px rgba(0,0,0,0.5);
+       z-index: 2;
+       transition: 0.4s;
+      }
+      .team .team_box .profile:hover img{
+       border-radius: 20px;
+       margin-top: -230px;
+      }
+      .team .team_box .profile .info{
+        position: absolute;
+        text-align: center;
+        top:25%;
+        transition: 0.4s;
+      }
+      .team .team_box .profile:hover .info{
+       top: 60%;
+      }
+      .team .team_box .profile .info .name{
+       color: #fac031;
+       margin-bottom: 15px;
+      }
+      .team .team_box .profile .info .bio{
+       width: 70%;
+       text-align: center;
+       margin: 0 auto 10px auto;
+      }
+      .team .team_box .profile .info .team_icon i{
+        margin: 10px 5px 5px 0;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .team .team_box .profile .info .team_icon i:hover{
+          color:#fac031;
+      }
+  </style> 
+  <script>(function(w, d) { w.CollectId = "66362b353e99425e992d2556"; var h = d.head || d.getElementsByTagName("head")[0];
+   var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); 
+  s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script> 
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="project work/IMG-20231224-WA0011.jpg">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsiblenavbar">
+          <span class="navbar-toggler-icon"></span>
+         </button>
+          <div class="collapse navbar-collapse" id="collapsiblenavbar">
+          <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+           <a class="nav-link" href="#mainsection"><b>Home</b></a>
+           </li>
+          <li class="nav-item">
+           <a class="nav-link" href="#featured"><b>Shop</b></a>
+           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#imagesection"><b>Blog</b></a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#footersection"><b>About</b></a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact"><b>Contact us</b></a>
+            </li> 
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                  <b><i class="fas fa-search"></b></i>
+              </a>   
+            </li> 
+          </ul>
+        </div>
+      </div>
+    </nav>  
+  
+      <section id ="mainsection" class="mainsection">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 main-content">
+              <h4>NEW ARRAIVALS</h4>
+              <h2><span class="orange-text">Best Price</span> This Year</h2>
+              <P>lorem ipsum dolor sit amet consectetur,<br>adipisicing elit.Recunsandae</P>
+              <button type="button" class="btn btn-dark">Shop Now</button>
+            </div>
+          </div>
+        </div>
+      </section>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="row">
+                <div class="col-lg-2">
+                   <img src="project work/1.png"> 
+                </div>
+                <div class="col-lg-2">
+                  <img src="project work/2.png"> 
+                </div>
+                <div class="col-lg-2">
+                  <img src="project work/3.png"> 
+                </div>
+                <div class="col-lg-2">
+                  <img src="project work/3.webp"> 
+                </div>
+                <div class="col-lg-2">
+                  <img src="project work/1.webp"> 
+                </div>
+                <div class="col-lg-2">
+                <img src="project work/2.webp"> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="product">
+          <div class="container-fluid">
+              <div class="row no-gutters">
+                <div class="col-lg-4">
+                  <div class="product-item">
+                    <img src="project work/1-4.jpg"class="img-fluid" alt="Product Image"style="height:380px;width:480px;">
+                    <div class="product-details left">
+                    <h4>Extreme Rare Sneakers</h4>
+                    <p><u>SHOPNOW</u></p>
+                    </div>  
+                  </div>  
+                </div>  
+                <div class="col-lg-4">
+                  <div class="product-item">
+                    <img src="project work/2-3.jpg"class="img-fluid" alt="Product Image"style="height:380px;width:480px;">
+                    <div class="product-details center">
+                    <h4>Awesome Blank Outfit</h4>
+                    <p><u>SHOPNOW</u></p>
+                    </div>
+                  </div>  
+                </div>
+                <div class="col-lg-4">
+                  <div class="product-item">
+                    <img src="project work/3-1.jpg"class="img-fluid" alt="Product Image"style="height:380px;width:480px;">
+                    <div class="product-details right">
+                    <h4>Sportwear up to 50% of</h4>
+                    <p><u>SHOPNOW</u></p>
+                    </div>
+                  </div>   
+                </div>
+              </div>
+            </div> 
+        </section>
+
+        <section  id="featured" class="featured">
+          <div class="container-fluid py-5">
+            <div class="row py-5">
+              <div class="col-lg-5 m-auto text-center">
+                <h1>Our Featured</h1>
+                <p>lorem ipsum dolor sit amet consectetur,adipisicing elit.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3 text-center">
+                <div class="card mb-2">
+                  <img src="project work/1-3.jpg"class="img-fluid">
+                  <div class="card-body">
+                  <h6>Sport shoes</h6>
+                  <p>$10</p>
+                  <button class="hover-button">Shopnow</button>
+                  </div>
+                  </div> 
+              </div>
+              <div class="col-lg-3 text-center">
+                <div class="card mb-2">
+                  <img src="project work/2-2.jpg"class="img-fluid">
+                  <div class="card-body">
+                  <h6>Sport shoes</h6>
+                  <p>$10</p>
+                  <button class="hover-button">Shopnow</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 text-center">
+                <div class="card mb-2">
+                  <img src="project work/3-3.jpg"class="img-fluid">
+                  <div class="card-body">
+                  <h6>Sport Bag</h6>
+                  <p>$10</p>
+                  <button class="hover-button">Shopnow</button>
+                  </div>
+                </div>  
+              </div>
+              <div class="col-lg-3 text-center">
+                <div class="card mb-2">
+                  <img src="project work/IMG_20231228_203006.jpg"class="img-fluid">
+                  <div class="card-body">
+                  <h6>Cap</h6>
+                  <p>$10</p>
+                  <button class="hover-button">Shopnow</button>
+                  </div>
+                </div>  
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id ="imagesection" class="imagesection">
+          <div class="container py-5">
+            <div class="row py-5">
+              <div class="col-lg-6">
+                <h5>Mid Season Sale</h5>
+                <h1 style = color:grey>Autumn Collection<br>Up to 20% Off</h1>
+                <button type="button" class="btn btn-warning">Shop Now</button>
+              </div>
+            </div>
+          </div>    
+        </section>
+
+        <section class="Dresses">
+          <div class="container-fluid py-5">
+            <div class="row py-5">
+              <div class="col-lg-5 m-auto text-center">
+                <h1>Dresses & Jumpsuits</h1>
+                <p>lorem ipsum dolor sit amet consectetur,adipisicing elit.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3 text-center">
+                <div class="card mb-2">
+                  <img src="project work/1 - Copy.jpg"class="img-fluid">
+                  <div class="card-body">
+                  <h6>Dress</h6>
+                  <p>$10</p>
+                  <button class="hover-button">Shopnow</button>
+                  </div>
+                </div>  
+              </div>
+              <div class="col-lg-3 text-center">
+                <div class="card mb-2">
+                  <img src="project work/2 - Copy.jpg"class="img-fluid">
+                  <div class="card-body">
+                  <h6>Dress</h6>
+                  <p>$10</p>
+                  <button class="hover-button">Shopnow</button>
+                  </div>
+                </div>  
+              </div>
+              <div class="col-lg-3 text-center">
+                <div class="card mb-2">
+                  <img src="project work/3 - Copy.jpg"class="img-fluid">
+                  <div class="card-body">
+                  <h6>Dress</h6>
+                  <p>$10</p>
+                  <button class="hover-button">Shopnow</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 text-center">
+                <div class="card mb-2">
+                  <img src="project work/1 - Copy.jpg"class="img-fluid">
+                  <div class="card-body">
+                  <h6>Dress</h6>
+                  <p>$10</p>
+                  <button class="hover-button">Shopnow</button>
+                  </div>
+                </div>  
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="watches">
+          <div class="container-fluid py-5">
+            <div class="row py-5">
+              <div class="col-lg-5 m-auto text-center">
+                <h1>Best Watches</h1>
+                <p>lorem ipsum dolor sit amet consectetur,adipisicing elit.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3 text-center">
+                <div class="card mb-2">
+                  <img src="project work/1-2.jpg"class="img-fluid">
+                  <div class="card-body">
+                  <h6>Watches</h6>
+                  <p>$10</p>
+                  <button class="hover-button">Shopnow</button>
+                  </div>
+                </div>
+              </div>    
+              <div class="col-lg-3 text-center">
+                <div class="card mb-2">
+                  <img src="project work/2-1.jpg"class="img-fluid">
+                  <div class="card-body">
+                  <h6>Watches</h6>
+                  <p>$10</p>
+                  <button class="hover-button">Shopnow</button>
+                  </div>
+                </div>  
+              </div>
+              <div class="col-lg-3 text-center">
+                <div class="card mb-2">
+                  <img src="project work/3-1.jpg"class="img-fluid">
+                  <div class="card-body">
+                  <h6>Watches</h6>
+                  <p>$10</p>
+                  <button class="hover-button">Shopnow</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 text-center">
+                <div class="card mb-2">
+                  <img src="project work/1-2.jpg"class="img-fluid">
+                  <div class="card-body">
+                  <h6>Watches</h6>
+                  <p>$10</p>
+                  <button class="hover-button">Shopnow</button>
+                  </div>
+                </div>  
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="shoes">
+          <div class="container-fluid py-5">
+            <div class="row py-5">
+              <div class="col-lg-5 m-auto text-center">
+                <h1>Running Shoes</h1>
+                <p>lorem ipsum dolor sit amet consectetur,adipisicing elit.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3 text-center">
+                <div class="card mb-2">
+                  <img src="project work/IMG_20231229_185627.jpg"class="img-fluid">
+                  <div class="card-body">
+                  <h6>Shoes</h6>
+                  <p>$10</p>
+                  <button class="hover-button">Shopnow</button>
+                  </div>
+                </div>  
+              </div>
+              <div class="col-lg-3 text-center">
+                <div class="card mb-2">
+                  <img src="project work/IMG_20231229_185649.jpg"class="img-fluid">
+                  <div class="card-body">
+                  <h6>Shoes</h6>
+                  <p>$10</p>
+                  <button class="hover-button">Shopnow</button>
+                  </div>
+                </div>  
+              </div>
+              <div class="col-lg-3 text-center">
+                <div class="card mb-2">
+                  <img src="project work/IMG_20231229_185716.jpg"class="img-fluid">
+                  <div class="card-body">
+                  <h6>Shoes</h6>
+                  <p>$10</p>
+                  <button class="hover-button">Shopnow</button>
+                  </div>
+                </div>  
+              </div>
+              <div class="col-lg-3 text-center">
+                <div class="card mb-2">
+                  <img src="project work/IMG_20231229_185627.jpg"class="img-fluid">
+                  <div class="card-body">
+                  <h6>Shoes</h6>
+                  <p>$10</p>
+                  <button class="hover-button">Shopnow</button>
+                  </div>
+                </div>    
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id= "footersection" class="footer-top footer-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="single-footer-top f1">
+                    <img src="project work/IMG-20231224-WA0011.jpg" alt="footer-logo">
+                    <p>Lorem ipsum dolor sit amet consectetur,<br>adipisicing elit.<br>Corporis vitae libero obcaecati<br>
+                    facilis voluptatibus unde,</p>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="single-footer-top f2">
+                  <h4>Featured</h4>
+                    <p><a href="#">MEN</a><br>
+                    <a href="#">WOMEN</a><br>
+                    <a href="#">BOYS</a><br>
+                    <a href="#">GIRLS</a><br>
+                    <a href="#">NEW ARRIVAL</a><br>
+                    <a href="#">SHOES</a><br>
+                    <a href="#">CLOTHES</a></p>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="single-footer-top f3">
+                  <h4>Contact Us</h4>
+                  <div class="contact">
+                    <h6>ADDRESS</h6>
+                    <p>sec.34 City-Chandigarh</p>
+                  </div> 
+                  <div class="contact">
+                    <h6>PHONE</h6>
+                    <p>90153-14837</p>
+                  </div>  
+                  <div class="contact">
+                    <h6>E-MAIL</h6>
+                    <p>aditiranaworld24@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="single-footer-top f4">
+                  <h4>Instagram</h4>
+                  <div class="footer-instagram">
+                    <img src="project work/IMG-20231224-WA0010.jpg" alt="Instagram Image 1">
+                    <img src="project work/2-4.jpg" alt="Instagram Image 2">
+                    <img src="project work/3-2.jpg" alt="Instagram Image 3">
+                    <img src="project work/pic.jpg" alt="Instagram Image 4">
+                  </div>
+                </div>    
+            </div>
+          </div>
+        </section>
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="footer-bottom-left">
+                  <img src="project work/payment.png">
+                </div>
+              </div>
+              <div class="col-lg-9">
+                <div class="footer-bottom-left text-left">
+                  <p>rymo e-commerce 2021.All Right Reserved</p>
+                </div>   
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section id="contact">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe9-bnSVbgX-ptQauPczzm1TozLaiauDEHqqrXw8_fufvBLtg/viewform?embedded=true"
+           width="640" height="687" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </section>
+        
+
+        <!--Team-->
+   <div class="team">
+    <h1>Our<span>Team</span></h1>
+    <div class="team_box">
+        <div class="profile">
+            <img src="project work/team1.jpg"/>
+            <div class="info">
+                <h2 class="name">Founder</h2>
+                <p class="bio">Aditi Rana</p>
+                <div class="team_icon">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+            </div>
+        </div>
+        <div class="profile">
+            <img src="project work/team2.JPG"/>
+            <div class="info">
+                <h2 class="name"> Co-Founder</h2>
+                <p class="bio">Aryan Rana</p>
+                <div class="team_icon">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+            </div>
+        </div>
+        <div class="profile">
+            <img src="project work/team3.jpg"/>
+            <div class="info">
+                <h2 class="name">Member</h2>
+                <p class="bio">Pankaj</p>
+                <div class="team_icon">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+            </div>
+        </div>
+        <div class="profile">
+            <img src="project work/team4.jpg"/>
+            <div class="info">
+                <h2 class="name">Member</h2>
+                <p class="bio">Nikhil</p>
+                <div class="team_icon">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>  
+
+
+</body>
+</html>
